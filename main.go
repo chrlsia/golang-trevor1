@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"myapp/doctor"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -19,9 +20,15 @@ func main() {
 		fmt.Print("-> ")
 		userInput, _ := reader.ReadString('\n')
 
-		response := doctor.Response(userInput)
+		userInput = strings.Replace(userInput,"\r\n","",-1)
+		userInput = strings.Replace(userInput,"\n","",-1)
 
-		fmt.Println(response)
+		if userInput =="quit"{
+			break
+		} else {
+			fmt.Println(doctor.Response(userInput))
+		}
+
 	}
 
 	
