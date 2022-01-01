@@ -34,3 +34,6 @@ func main() {
 }
 
 //Αρχεία σε github
+
+//go build -o eliza main.go (for mac)
+//go build -o eliza.exe main.go(for win)
